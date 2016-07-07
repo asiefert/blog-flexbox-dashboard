@@ -1,0 +1,159 @@
+/*
+Project Name: Tumblr-like dashboard
+Description: Tumblr dashboard clone using flexbox
+Author: bsiefert
+Contributors: Nate Northway: more responsiveness and rounded corners
+*/
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300,100);
+body,
+html {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #3b5280;
+}
+
+.header {
+  z-index: 100;
+  display: flex;
+  /*  flex:1;*/
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #3b5280;
+  border-bottom: 1px solid #425b8d;
+  transition: width .2s ease;
+  padding: 5px 0;
+}
+
+.search-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  transition: width .2s ease;
+}
+
+.search-container .searchbar {
+  font-weight: 300;
+  font-size: 12px;
+  height: 98%;
+  width: 50%;
+  border: 0;
+  outline: 0;
+  background-color: #364b75;
+  font-size: 24px;
+  color: #FFF;
+  transition: width .2s ease;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, .2);
+}
+
+.search-container .searchbar:focus,
+.searchbar:active {
+  color: #000;
+  background-color: #FFF;
+  outline: 0;
+}
+
+.main-area {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+}
+
+.main-area .post {
+  margin-top: 10px;
+  height: auto;
+  width: 50%;
+  background-color: #FFF;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: width .2s ease;
+  border-radius: 8px;
+}
+
+.post-head {
+  padding: 5px;
+}
+
+.post .blog-name {
+  font-weight: 800;
+  margin-left: 10px;
+}
+
+.post .title {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  height: auto;
+  font-size: 40px;
+  font-weight: 700;
+  border-bottom: 1px solid #E0E0E0
+}
+
+.post .post-content {
+  display: inline-block;
+  height: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.post .post-content .user-name-blog>a{
+  color:#000;
+  padding-top:10px;
+}
+.post .post-content .user-name-blog{
+  color:#000;
+  padding-top:10px;
+/*  padding-left:10px;*/
+  padding-bottom:5px;
+}
+
+.post .post-content blockquote {
+  display: block;
+  margin-left:0;
+  padding-left: 15px;
+  margin-top:0;
+  margin-bottom:10px;
+  border-left: 2px solid #ccc;
+}
+
+.post .post-content blockquote > blockquote {
+  padding-left:10px;
+}
+.post .post-content img {
+  display:block;
+  width:50%;
+  height:50%;
+  border-radius:10px;
+}
+
+.post .post-content img:before{
+  border-left:20px solid #ccc;
+}
+
+.post .post-controls {
+  border-top: 1px solid #E0E0E0;
+  height: 20px;
+  padding: 8px;
+}
+
+@media (max-width: 600px) {
+  .header,
+  .main-area .post,
+  .search-container,
+  .search-container .searchbar {
+    width: 90%;
+    margin: 0 auto;
+    transition: width .2s ease;
+  }
+  .main-area .post {
+    margin-top: 10px;
+  }
+}
